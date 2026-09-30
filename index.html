@@ -5,35 +5,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Selector Casino — бонус до 300% и промокод для новых игроков</title>
   <meta name="description" content="Обзор Selector Casino: приветственный бонус до 300% на первый депозит, актуальный промокод, условия отыгрыша, платежи и лимиты на вывод.">
-  <meta name="theme-color" content="#1b1f27">
+  <meta name="theme-color" content="#111827">
   <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
-  <link rel="preload" href="fonts/rubik-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/manrope-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="img/hero-casino-m.webp" as="image" media="(max-width: 767px)">
+  <link rel="preload" href="img/hero-casino.webp" as="image" media="(min-width: 768px)">
   <link rel="stylesheet" href="css/style.css">
   <script src="js/main.js" defer></script>
 </head>
 <body>
+  <!-- Иконки из UI-кита (Figma), подключаются через <use> -->
+  <svg class="sprite" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12H19"/><path d="M12 5L19 12L12 19"/></symbol><symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6L9 17L4 12"/></symbol><symbol id="i-clock" viewBox="0 0 24 24"><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"/><path d="M12 6V12L16 14"/></symbol><symbol id="i-crown" viewBox="0 0 24 24"><path d="M2 4L5 16H19L22 4L16 11L12 4L8 11L2 4Z"/><path d="M2 20H22"/></symbol><symbol id="i-dice" viewBox="0 0 24 24"><path d="M12 10H4C2.89543 10 2 10.8954 2 12V20C2 21.1046 2.89543 22 4 22H12C13.1046 22 14 21.1046 14 20V12C14 10.8954 13.1046 10 12 10Z"/><path d="M17.92 14L21.42 10.5C21.791 10.0885 21.9964 9.55408 21.9964 9.00001C21.9964 8.44593 21.791 7.91151 21.42 7.50001L16.42 2.58001C16.0085 2.20897 15.4741 2.00362 14.92 2.00362C14.3659 2.00362 13.8315 2.20897 13.42 2.58001L10 6.00001"/><path d="M6 18H6.01"/><path d="M10 14H10.01"/><path d="M15 6H15.01"/><path d="M18 9H18.01"/></symbol><symbol id="i-gift" viewBox="0 0 24 24"><path d="M20 12V22H4V12"/><path d="M21 7H3C2.44772 7 2 7.44772 2 8V11C2 11.5523 2.44772 12 3 12H21C21.5523 12 22 11.5523 22 11V8C22 7.44772 21.5523 7 21 7Z"/><path d="M12 22V7"/><path d="M12 7H7.5C6.83696 7 6.20107 6.73661 5.73223 6.26777C5.26339 5.79893 5 5.16304 5 4.5C5 3.83696 5.26339 3.20107 5.73223 2.73223C6.20107 2.26339 6.83696 2 7.5 2C11 2 12 7 12 7Z"/><path d="M12 7H16.5C17.163 7 17.7989 6.73661 18.2678 6.26777C18.7366 5.79893 19 5.16304 19 4.5C19 3.83696 18.7366 3.20107 18.2678 2.73223C17.7989 2.26339 17.163 2 16.5 2C13 2 12 7 12 7Z"/></symbol><symbol id="i-headset" viewBox="0 0 24 24"><path d="M3 11H6C6.26522 11 6.51957 11.1054 6.70711 11.2929C6.89464 11.4804 7 11.7348 7 12V17C7 17.2652 6.89464 17.5196 6.70711 17.7071C6.51957 17.8946 6.26522 18 6 18H4C3.73478 18 3.48043 17.8946 3.29289 17.7071C3.10536 17.5196 3 17.2652 3 17V11ZM3 11C3 8.61305 3.94821 6.32387 5.63604 4.63604C7.32387 2.94821 9.61305 2 12 2C14.3869 2 16.6761 2.94821 18.364 4.63604C20.0518 6.32387 21 8.61305 21 11M21 11V17C21 17.2652 20.8946 17.5196 20.7071 17.7071C20.5196 17.8946 20.2652 18 20 18H18C17.7348 18 17.4804 17.8946 17.2929 17.7071C17.1054 17.5196 17 17.2652 17 17V12C17 11.7348 17.1054 11.4804 17.2929 11.2929C17.4804 11.1054 17.7348 11 18 11H21Z"/></symbol><symbol id="i-shield" viewBox="0 0 24 24"><path d="M20 13C20 18 16.5 20.5 12.34 21.95C12.1222 22.0238 11.8855 22.0203 11.67 21.94C7.5 20.5 4 18 4 13V6.00001C4 5.73479 4.10536 5.48044 4.29289 5.2929C4.48043 5.10536 4.73478 5.00001 5 5.00001C7 5.00001 9.5 3.80001 11.24 2.28001C11.4519 2.09901 11.7214 1.99956 12 1.99956C12.2786 1.99956 12.5481 2.09901 12.76 2.28001C14.51 3.81001 17 5.00001 19 5.00001C19.2652 5.00001 19.5196 5.10536 19.7071 5.2929C19.8946 5.48044 20 5.73479 20 6.00001V13Z"/></symbol><symbol id="i-star" viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/></symbol><symbol id="i-ticket" viewBox="0 0 24 24"><path d="M2 9C2.79565 9 3.55871 9.31607 4.12132 9.87868C4.68393 10.4413 5 11.2044 5 12C5 12.7956 4.68393 13.5587 4.12132 14.1213C3.55871 14.6839 2.79565 15 2 15V17C2 17.5304 2.21071 18.0391 2.58579 18.4142C2.96086 18.7893 3.46957 19 4 19H20C20.5304 19 21.0391 18.7893 21.4142 18.4142C21.7893 18.0391 22 17.5304 22 17V15C21.2044 15 20.4413 14.6839 19.8787 14.1213C19.3161 13.5587 19 12.7956 19 12C19 11.2044 19.3161 10.4413 19.8787 9.87868C20.4413 9.31607 21.2044 9 22 9V7C22 6.46957 21.7893 5.96086 21.4142 5.58579C21.0391 5.21071 20.5304 5 20 5H4C3.46957 5 2.96086 5.21071 2.58579 5.58579C2.21071 5.96086 2 6.46957 2 7V9Z"/><path d="M13 5V19"/></symbol><symbol id="i-wallet" viewBox="0 0 24 24"><path d="M19 7V4C19 3.73478 18.8946 3.48043 18.7071 3.29289C18.5196 3.10536 18.2652 3 18 3H5C4.46957 3 3.96086 3.21071 3.58579 3.58579C3.21071 3.96086 3 4.46957 3 5C3 5.53043 3.21071 6.03914 3.58579 6.41421C3.96086 6.78929 4.46957 7 5 7H20C20.2652 7 20.5196 7.10536 20.7071 7.29289C20.8946 7.48043 21 7.73478 21 8V12H18C17.4696 12 16.9609 12.2107 16.5858 12.5858C16.2107 12.9609 16 13.4696 16 14C16 14.5304 16.2107 15.0391 16.5858 15.4142C16.9609 15.7893 17.4696 16 18 16H21C21.2652 16 21.5196 15.8946 21.7071 15.7071C21.8946 15.5196 22 15.2652 22 15V13"/><path d="M3 5V19C3 19.5304 3.21071 20.0391 3.58579 20.4142C3.96086 20.7893 4.46957 21 5 21H20C20.2652 21 20.5196 20.8946 20.7071 20.7071C20.8946 20.5196 21 20.2652 21 20V16"/></symbol><symbol id="i-zap" viewBox="0 0 24 24"><path d="M3.99999 14C3.81076 14.0006 3.62522 13.9476 3.46495 13.847C3.30467 13.7464 3.17623 13.6024 3.09454 13.4317C3.01286 13.261 2.98129 13.0706 3.00349 12.8827C3.0257 12.6947 3.10077 12.517 3.21999 12.37L13.12 2.17C13.1943 2.08428 13.2955 2.02635 13.407 2.00573C13.5185 1.9851 13.6337 2.00301 13.7337 2.0565C13.8337 2.10999 13.9126 2.19589 13.9573 2.3001C14.0021 2.40431 14.0101 2.52064 13.98 2.63L12.06 8.64999C12.0034 8.80152 11.9844 8.96452 12.0046 9.125C12.0248 9.28549 12.0837 9.43868 12.1761 9.57142C12.2685 9.70417 12.3918 9.81251 12.5353 9.88716C12.6788 9.9618 12.8382 10.0005 13 10H20C20.1892 9.99935 20.3748 10.0524 20.535 10.153C20.6953 10.2536 20.8238 10.3976 20.9054 10.5683C20.9871 10.739 21.0187 10.9294 20.9965 11.1173C20.9743 11.3053 20.8992 11.483 20.78 11.63L10.88 21.83C10.8057 21.9157 10.7045 21.9736 10.593 21.9943C10.4815 22.0149 10.3663 21.997 10.2663 21.9435C10.1663 21.89 10.0874 21.8041 10.0427 21.6999C9.99791 21.5957 9.98991 21.4793 10.02 21.37L11.94 15.35C11.9966 15.1985 12.0156 15.0355 11.9954 14.875C11.9752 14.7145 11.9163 14.5613 11.8239 14.4286C11.7315 14.2958 11.6082 14.1875 11.4647 14.1128C11.3212 14.0382 11.1617 13.9995 11 14H3.99999Z"/></symbol></svg>
 
   <!-- ============ ШАПКА ============ -->
   <header class="header" id="top">
     <div class="container header__inner">
-      <a class="logo" href="#top" aria-label="selector — на главную">
+      <a class="logo" href="#top">
         <span class="logo__mark" aria-hidden="true">S</span>
         <span class="logo__text">selector</span>
       </a>
 
       <nav class="nav" id="nav" aria-label="Основная навигация">
         <ul class="nav__list">
-          <li><a class="nav__link" href="#bonuses">Бонусы</a></li>
-          <li><a class="nav__link" href="#games">Игры</a></li>
-          <li><a class="nav__link" href="#review">Обзор</a></li>
-          <li><a class="nav__link" href="#payments">Платежи</a></li>
-          <li><a class="nav__link" href="#faq">FAQ</a></li>
+          <li><a class="nav__link" href="#bonuses"><svg class="icon" width="16" height="16" aria-hidden="true"><use href="#i-gift"/></svg>Бонусы</a></li>
+          <li><a class="nav__link" href="#games"><svg class="icon" width="16" height="16" aria-hidden="true"><use href="#i-dice"/></svg>Игры</a></li>
+          <li><a class="nav__link" href="#vip"><svg class="icon" width="16" height="16" aria-hidden="true"><use href="#i-crown"/></svg>VIP</a></li>
+          <li><a class="nav__link" href="#review"><svg class="icon" width="16" height="16" aria-hidden="true"><use href="#i-star"/></svg>Обзор</a></li>
+          <li><a class="nav__link" href="#faq"><svg class="icon" width="16" height="16" aria-hidden="true"><use href="#i-headset"/></svg>FAQ</a></li>
         </ul>
       </nav>
 
       <div class="header__actions">
-        <a class="btn btn--ghost btn--sm header__login" href="go/selector/" rel="nofollow sponsored noopener" target="_blank">Вход</a>
-        <a class="btn btn--primary btn--sm" href="go/selector/" rel="nofollow sponsored noopener" target="_blank">Регистрация</a>
+        <a class="btn btn--ghost header__login" href="go/selector/" rel="nofollow sponsored noopener" target="_blank">Вход</a>
+        <a class="btn btn--primary" href="go/selector/" rel="nofollow sponsored noopener" target="_blank">Регистрация</a>
         <button class="burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav">
           <span class="burger__line"></span>
         </button>
@@ -46,36 +50,44 @@
     <!-- ============ ОФФЕР С ПРОМОКОДОМ ============ -->
     <section class="offer" aria-labelledby="offer-title">
       <div class="container">
-        <div class="offer__card">
-          <div class="offer__content">
-            <p class="offer__eyebrow">Бонус для новых игроков</p>
-            <h1 class="offer__title" id="offer-title">
-              Selector Casino: <span class="text-yellow">до&nbsp;300%</span> на&nbsp;первый депозит
-            </h1>
+        <div class="banner banner--casino">
+          <picture class="banner__art">
+            <source srcset="img/hero-casino.webp" media="(min-width: 768px)" width="1600" height="678">
+            <img src="img/hero-casino-m.webp" width="720" height="678" alt="" fetchpriority="high" decoding="async">
+          </picture>
 
-            <ul class="offer__perks">
-              <li class="perk"><span class="perk__value">300%</span><span class="perk__label">к депозиту</span></li>
-              <li class="perk"><span class="perk__value">x3</span><span class="perk__label">вейджер</span></li>
-              <li class="perk"><span class="perk__value">500&nbsp;₽</span><span class="perk__label">мин. депозит</span></li>
+          <div class="banner__content">
+            <p class="chip">
+              <svg class="icon" width="15" height="15" aria-hidden="true"><use href="#i-dice"/></svg>
+              Бонус для новых игроков
+            </p>
+
+            <h1 class="banner__title" id="offer-title">
+              Бонус <span class="text-accent">до&nbsp;300%</span> на&nbsp;первый депозит в&nbsp;Selector
+            </h1>
+            <p class="banner__text">Введите промокод при первом пополнении — бонус начислится сразу.</p>
+
+            <ul class="stats">
+              <li class="stats__item"><span class="stats__value">300%</span><span class="stats__label">к депозиту</span></li>
+              <li class="stats__item"><span class="stats__value">x3</span><span class="stats__label">вейджер</span></li>
+              <li class="stats__item"><span class="stats__value">500&nbsp;₽</span><span class="stats__label">мин. депозит</span></li>
             </ul>
 
             <div class="promo" data-promo>
-              <span class="promo__label">Промокод</span>
-              <code class="promo__code" data-promo-code>SELECTOR300</code>
-              <button class="promo__copy" type="button" data-promo-copy>
-                <svg class="icon" width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 8V5a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-3M5 8h9a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-9a2 2 0 0 1 2-2Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <div class="promo__body">
+                <span class="overline">Промокод</span>
+                <code class="promo__code" data-promo-code>SELECTOR300</code>
+              </div>
+              <button class="btn btn--secondary btn--sm promo__copy" type="button" data-promo-copy>
+                <svg class="icon" width="16" height="16" aria-hidden="true"><use href="#i-ticket"/></svg>
                 <span data-promo-status>Копировать</span>
               </button>
             </div>
 
-            <div class="offer__cta">
+            <div class="banner__cta">
               <a class="btn btn--primary btn--lg" href="go/selector/" rel="nofollow sponsored noopener" target="_blank">Получить бонус</a>
-              <p class="offer__note">18+ · Действуют <a href="#bonus-terms">условия акции</a></p>
+              <p class="caption">18+ · Действуют <a href="#bonus-terms">условия акции</a></p>
             </div>
-          </div>
-
-          <div class="offer__art">
-            <img src="img/hero.svg" width="420" height="380" alt="" fetchpriority="high" decoding="async">
           </div>
         </div>
       </div>
@@ -84,31 +96,45 @@
     <!-- ============ БОНУСЫ ============ -->
     <section class="section" id="bonuses" aria-labelledby="bonuses-title">
       <div class="container">
-        <h2 class="section__title" id="bonuses-title">Бонусы и акции</h2>
+        <div class="section-head">
+          <h2 class="section-head__title" id="bonuses-title">Бонусы и акции</h2>
+        </div>
 
-        <div class="bonuses">
-          <article class="bonus-card bonus-card--blue">
-            <span class="bonus-card__tag">Новичкам</span>
-            <h3 class="bonus-card__title">Приветственный пакет</h3>
-            <p class="bonus-card__value">до 300%</p>
-            <p class="bonus-card__text">Бонус на первый депозит от 500 ₽. Отыгрыш x3 от суммы депозита в слотах.</p>
-            <a class="btn btn--light" href="go/selector/" rel="nofollow sponsored noopener" target="_blank">Забрать</a>
+        <div class="promos">
+          <article class="promo-card promo-card--gold">
+            <img class="promo-card__medal" src="img/medal-gold.webp" width="80" height="80" alt="" loading="lazy" decoding="async">
+            <div class="promo-card__tags"><span class="tag">Новичкам</span><span class="tag">1-й депозит</span></div>
+            <h3 class="promo-card__title">Приветственный бонус</h3>
+            <div class="promo-card__prize">
+              <span class="badge badge--info">по промокоду</span>
+              <p class="promo-card__value">до 300%</p>
+              <p class="promo-card__note">вейджер x3, от 500 ₽</p>
+            </div>
+            <a class="btn btn--primary btn--sm" href="go/selector/" rel="nofollow sponsored noopener" target="_blank">Забрать</a>
           </article>
 
-          <article class="bonus-card bonus-card--green">
-            <span class="bonus-card__tag">Каждый день</span>
-            <h3 class="bonus-card__title">Бездепозитные бонусы</h3>
-            <p class="bonus-card__value">в Telegram</p>
-            <p class="bonus-card__text">Промокоды на фриспины и бонусные деньги публикуются в официальном канале казино.</p>
-            <a class="btn btn--light" href="go/selector/" rel="nofollow sponsored noopener" target="_blank">Подробнее</a>
+          <article class="promo-card promo-card--blue">
+            <img class="promo-card__medal" src="img/medal-silver.webp" width="80" height="80" alt="" loading="lazy" decoding="async">
+            <div class="promo-card__tags"><span class="tag">Каждый день</span><span class="tag">Telegram</span></div>
+            <h3 class="promo-card__title">Бездепозитные бонусы</h3>
+            <div class="promo-card__prize">
+              <span class="badge badge--success">без депозита</span>
+              <p class="promo-card__value">фриспины</p>
+              <p class="promo-card__note">промокоды в официальном канале</p>
+            </div>
+            <a class="btn btn--primary btn--sm" href="go/selector/" rel="nofollow sponsored noopener" target="_blank">Подробнее</a>
           </article>
 
-          <article class="bonus-card">
-            <span class="bonus-card__tag">VIP-Club</span>
-            <h3 class="bonus-card__title">Кэшбэк и личный менеджер</h3>
-            <p class="bonus-card__value">до 15%</p>
-            <p class="bonus-card__text">Еженедельный кэшбэк, повышенные лимиты вывода и подарки за переход на новый уровень.</p>
-            <a class="btn btn--primary" href="go/selector/" rel="nofollow sponsored noopener" target="_blank">В VIP-клуб</a>
+          <article class="promo-card promo-card--bronze">
+            <img class="promo-card__medal" src="img/medal-bronze.webp" width="80" height="80" alt="" loading="lazy" decoding="async">
+            <div class="promo-card__tags"><span class="tag">Еженедельно</span><span class="tag">VIP</span></div>
+            <h3 class="promo-card__title">Кэшбэк за неделю</h3>
+            <div class="promo-card__prize">
+              <span class="badge badge--warning">до пятницы</span>
+              <p class="promo-card__value">до 15%</p>
+              <p class="promo-card__note">зависит от VIP-уровня</p>
+            </div>
+            <a class="btn btn--primary btn--sm" href="go/selector/" rel="nofollow sponsored noopener" target="_blank">Участвовать</a>
           </article>
         </div>
       </div>
@@ -117,19 +143,77 @@
     <!-- ============ ИГРЫ ============ -->
     <section class="section" id="games" aria-labelledby="games-title">
       <div class="container">
-        <div class="section__head">
-          <h2 class="section__title" id="games-title">Популярные игры</h2>
-          <a class="section__more" href="go/selector/" rel="nofollow sponsored noopener" target="_blank">Все игры →</a>
+        <div class="section-head">
+          <h2 class="section-head__title" id="games-title">Популярные игры</h2>
+          <a class="section-head__link" href="go/selector/" rel="nofollow sponsored noopener" target="_blank">
+            Все игры <svg class="icon" width="16" height="16" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+          </a>
         </div>
 
         <ul class="games">
-          <li class="game"><a class="game__link" href="go/selector/" rel="nofollow sponsored noopener" target="_blank"><img class="game__img" src="img/game-1.webp" width="300" height="300" alt="Слот Gates of Olympus" loading="lazy" decoding="async"><span class="game__name">Gates of Olympus</span></a></li>
-          <li class="game"><a class="game__link" href="go/selector/" rel="nofollow sponsored noopener" target="_blank"><img class="game__img" src="img/game-2.webp" width="300" height="300" alt="Слот Sweet Bonanza" loading="lazy" decoding="async"><span class="game__name">Sweet Bonanza</span></a></li>
-          <li class="game"><a class="game__link" href="go/selector/" rel="nofollow sponsored noopener" target="_blank"><img class="game__img" src="img/game-3.webp" width="300" height="300" alt="Слот Book of Dead" loading="lazy" decoding="async"><span class="game__name">Book of Dead</span></a></li>
-          <li class="game"><a class="game__link" href="go/selector/" rel="nofollow sponsored noopener" target="_blank"><img class="game__img" src="img/game-4.webp" width="300" height="300" alt="Слот Big Bass Bonanza" loading="lazy" decoding="async"><span class="game__name">Big Bass Bonanza</span></a></li>
-          <li class="game"><a class="game__link" href="go/selector/" rel="nofollow sponsored noopener" target="_blank"><img class="game__img" src="img/game-5.webp" width="300" height="300" alt="Краш-игра Aviator" loading="lazy" decoding="async"><span class="game__name">Aviator</span></a></li>
-          <li class="game"><a class="game__link" href="go/selector/" rel="nofollow sponsored noopener" target="_blank"><img class="game__img" src="img/game-6.webp" width="300" height="300" alt="Live-шоу Crazy Time" loading="lazy" decoding="async"><span class="game__name">Crazy Time</span></a></li>
+          <li class="game">
+            <img class="game__art" src="img/game-mallard.webp" width="480" height="643" alt="" loading="lazy" decoding="async">
+            <span class="game__rating"><svg class="icon" width="12" height="12" aria-hidden="true"><use href="#i-star"/></svg>4.8</span>
+            <h3 class="game__title">Mallard Rush</h3>
+            <p class="game__provider">Ironbell</p>
+            <div class="game__hover">
+              <a class="btn btn--primary btn--sm" href="go/selector/" rel="nofollow sponsored noopener" target="_blank" aria-label="Играть в Mallard Rush">Играть</a>
+              <a class="btn btn--secondary btn--sm" href="go/selector/" rel="nofollow sponsored noopener" target="_blank" aria-label="Демо Mallard Rush">Демо</a>
+            </div>
+          </li>
+          <li class="game">
+            <img class="game__art" src="img/game-tide.webp" width="480" height="643" alt="" loading="lazy" decoding="async">
+            <span class="game__tag"><svg class="icon" width="12" height="12" aria-hidden="true"><use href="#i-shield"/></svg>Эксклюзив</span>
+            <span class="game__rating"><svg class="icon" width="12" height="12" aria-hidden="true"><use href="#i-star"/></svg>4.9</span>
+            <h3 class="game__title">Tide King</h3>
+            <p class="game__provider">Spinhouse</p>
+            <div class="game__hover">
+              <a class="btn btn--primary btn--sm" href="go/selector/" rel="nofollow sponsored noopener" target="_blank" aria-label="Играть в Tide King">Играть</a>
+              <a class="btn btn--secondary btn--sm" href="go/selector/" rel="nofollow sponsored noopener" target="_blank" aria-label="Демо Tide King">Демо</a>
+            </div>
+          </li>
+          <li class="game">
+            <img class="game__art" src="img/game-dawn.webp" width="480" height="643" alt="" loading="lazy" decoding="async">
+            <span class="game__rating"><svg class="icon" width="12" height="12" aria-hidden="true"><use href="#i-star"/></svg>4.5</span>
+            <h3 class="game__title">Dawn Raider</h3>
+            <p class="game__provider">Mammoth</p>
+            <div class="game__hover">
+              <a class="btn btn--primary btn--sm" href="go/selector/" rel="nofollow sponsored noopener" target="_blank" aria-label="Играть в Dawn Raider">Играть</a>
+              <a class="btn btn--secondary btn--sm" href="go/selector/" rel="nofollow sponsored noopener" target="_blank" aria-label="Демо Dawn Raider">Демо</a>
+            </div>
+          </li>
+          <li class="game game--more">
+            <a class="game__more" href="go/selector/" rel="nofollow sponsored noopener" target="_blank">
+              <span class="game__more-icon"><svg class="icon" width="26" height="26" aria-hidden="true"><use href="#i-dice"/></svg></span>
+              <span class="game__more-value">3000+</span>
+              <span class="game__more-text">слотов, live-казино и&nbsp;crash-игр</span>
+              <span class="btn btn--secondary btn--sm">Смотреть все</span>
+            </a>
+          </li>
         </ul>
+      </div>
+    </section>
+
+    <!-- ============ VIP-БАННЕР ============ -->
+    <section class="section" id="vip" aria-labelledby="vip-title">
+      <div class="container">
+        <div class="banner banner--vip">
+          <picture class="banner__art">
+            <source srcset="img/hero-vip.webp" media="(min-width: 768px)" width="1600" height="678">
+            <img src="img/hero-vip-m.webp" width="720" height="678" alt="" loading="lazy" decoding="async">
+          </picture>
+          <div class="banner__content">
+            <p class="chip">
+              <svg class="icon" width="15" height="15" aria-hidden="true"><use href="#i-crown"/></svg>
+              VIP-клуб
+            </p>
+            <h2 class="banner__title banner__title--l" id="vip-title">Кэшбэк, личный менеджер и&nbsp;повышенные лимиты</h2>
+            <p class="banner__text">Копите VIP-баллы за ставки и открывайте новые уровни с подарками за каждый переход.</p>
+            <div class="banner__cta">
+              <a class="btn btn--primary btn--lg" href="go/selector/" rel="nofollow sponsored noopener" target="_blank">Вступить в VIP</a>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -144,28 +228,49 @@
             и ставками на спорт. Сайт работает на русском языке, поддерживает рубли и криптовалюту,
             а новые игроки получают бонус до 300% на первый депозит.
           </p>
-          <p>
-            Ниже собрали главное: условия бонуса, платёжные методы, лимиты на вывод
-            и как выглядит сайт изнутри.
-          </p>
+          <p>Ниже — главное: условия бонуса, платёжные методы, лимиты на вывод и как выглядит сайт изнутри.</p>
 
-          <h3 id="bonus-terms">Условия приветственного бонуса</h3>
+          <h3 class="article__h3" id="bonus-terms">Как получить бонус</h3>
           <ol class="steps">
-            <li class="steps__item">Зарегистрируйтесь на сайте и подтвердите e-mail или телефон.</li>
-            <li class="steps__item">При первом пополнении введите промокод <strong>SELECTOR300</strong>.</li>
-            <li class="steps__item">Внесите от 500 ₽ — бонус начислится автоматически.</li>
-            <li class="steps__item">Отыграйте бонус с вейджером x3 в слотах и выводите выигрыш.</li>
+            <li class="step">
+              <span class="step__icon step__icon--green"><svg class="icon" width="22" height="22" aria-hidden="true"><use href="#i-check"/></svg></span>
+              <div class="step__body">
+                <p class="step__head"><span class="overline">01</span><span class="step__title">Регистрация</span></p>
+                <p class="step__text">Создайте аккаунт и подтвердите e-mail или телефон.</p>
+              </div>
+            </li>
+            <li class="step">
+              <span class="step__icon step__icon--accent"><svg class="icon" width="22" height="22" aria-hidden="true"><use href="#i-ticket"/></svg></span>
+              <div class="step__body">
+                <p class="step__head"><span class="overline">02</span><span class="step__title">Промокод</span></p>
+                <p class="step__text">В кассе введите <strong>SELECTOR300</strong> в поле «Промокод».</p>
+              </div>
+            </li>
+            <li class="step">
+              <span class="step__icon step__icon--blue"><svg class="icon" width="22" height="22" aria-hidden="true"><use href="#i-wallet"/></svg></span>
+              <div class="step__body">
+                <p class="step__head"><span class="overline">03</span><span class="step__title">Депозит</span></p>
+                <p class="step__text">Пополните счёт от 500 ₽ — бонус начислится автоматически.</p>
+              </div>
+            </li>
+            <li class="step">
+              <span class="step__icon step__icon--gold"><svg class="icon" width="22" height="22" aria-hidden="true"><use href="#i-zap"/></svg></span>
+              <div class="step__body">
+                <p class="step__head"><span class="overline">04</span><span class="step__title">Отыгрыш</span></p>
+                <p class="step__text">Сделайте ставки на сумму x3 от депозита в слотах и выводите выигрыш.</p>
+              </div>
+            </li>
           </ol>
 
-          <h3>Основная информация</h3>
+          <h3 class="article__h3">Основная информация</h3>
           <section class="table-wrap" tabindex="0" aria-label="Информация о казино">
-            <table class="table">
+            <table class="table table--kv">
               <caption class="visually-hidden">Основные характеристики Selector Casino</caption>
               <tbody>
                 <tr><th scope="row">Приветственный бонус</th><td>до 300% на первый депозит</td></tr>
                 <tr><th scope="row">Вейджер</th><td>x3 от суммы депозита</td></tr>
                 <tr><th scope="row">Минимальный депозит</th><td>500 ₽</td></tr>
-                <tr><th scope="row">Промокод</th><td><strong class="text-yellow">SELECTOR300</strong></td></tr>
+                <tr><th scope="row">Промокод</th><td><span class="text-accent">SELECTOR300</span></td></tr>
                 <tr><th scope="row">Валюты</th><td>RUB, USDT, BTC</td></tr>
                 <tr><th scope="row">Вывод средств</th><td>в среднем 1 час, до 24 часов</td></tr>
                 <tr><th scope="row">Игры</th><td>слоты, live-казино, crash-игры, ставки на спорт</td></tr>
@@ -175,53 +280,53 @@
             </table>
           </section>
 
-          <h3 id="payments">Платёжные методы</h3>
+          <h3 class="article__h3" id="payments">Платёжные методы</h3>
           <section class="table-wrap" tabindex="0" aria-label="Платёжные методы">
-            <table class="table table--striped">
+            <table class="table">
               <caption class="visually-hidden">Способы пополнения и вывода</caption>
               <thead>
                 <tr><th scope="col">Метод</th><th scope="col">Депозит от</th><th scope="col">Вывод</th></tr>
               </thead>
               <tbody>
-                <tr><td>Банковские карты</td><td>500 ₽</td><td>до 24 ч</td></tr>
-                <tr><td>СБП</td><td>500 ₽</td><td>до 1 ч</td></tr>
-                <tr><td>USDT (TRC-20)</td><td>10 USDT</td><td>до 1 ч</td></tr>
-                <tr><td>Bitcoin</td><td>0.0002 BTC</td><td>до 1 ч</td></tr>
+                <tr><td>Банковские карты</td><td>500 ₽</td><td><span class="badge badge--neutral">до 24 ч</span></td></tr>
+                <tr><td>СБП</td><td>500 ₽</td><td><span class="badge badge--success">до 1 ч</span></td></tr>
+                <tr><td>USDT (TRC-20)</td><td>10 USDT</td><td><span class="badge badge--success">до 1 ч</span></td></tr>
+                <tr><td>Bitcoin</td><td>0.0002 BTC</td><td><span class="badge badge--success">до 1 ч</span></td></tr>
               </tbody>
             </table>
           </section>
 
-          <h3>Как выглядит сайт</h3>
+          <h3 class="article__h3">Как выглядит сайт</h3>
           <p>Интерфейс тёмный и лаконичный: игры разделены по категориям, касса и бонусы доступны в&nbsp;один клик.</p>
           <ul class="shots">
             <li class="shots__item">
               <button class="shots__btn" type="button" data-lightbox="img/shot-lobby.webp" aria-label="Увеличить: лобби казино">
-                <img src="img/shot-lobby.webp" width="720" height="450" alt="Лобби казино Selector" loading="lazy" decoding="async">
+                <img src="img/shot-lobby.webp" width="1200" height="750" alt="Лобби казино" loading="lazy" decoding="async">
               </button>
-              <span class="shots__caption">Лобби казино</span>
+              <span class="caption">Лобби казино</span>
             </li>
             <li class="shots__item">
               <button class="shots__btn" type="button" data-lightbox="img/shot-cashier.webp" aria-label="Увеличить: касса">
-                <img src="img/shot-cashier.webp" width="720" height="450" alt="Касса и способы пополнения" loading="lazy" decoding="async">
+                <img src="img/shot-cashier.webp" width="1200" height="750" alt="Касса и способы пополнения" loading="lazy" decoding="async">
               </button>
-              <span class="shots__caption">Касса</span>
+              <span class="caption">Касса</span>
             </li>
             <li class="shots__item">
               <button class="shots__btn" type="button" data-lightbox="img/shot-bonus.webp" aria-label="Увеличить: раздел бонусов">
-                <img src="img/shot-bonus.webp" width="720" height="450" alt="Раздел бонусов" loading="lazy" decoding="async">
+                <img src="img/shot-bonus.webp" width="1200" height="750" alt="Раздел бонусов" loading="lazy" decoding="async">
               </button>
-              <span class="shots__caption">Бонусы</span>
+              <span class="caption">Бонусы</span>
             </li>
           </ul>
 
-          <h3>Плюсы и минусы</h3>
+          <h3 class="article__h3">Плюсы и минусы</h3>
           <div class="pros-cons">
-            <ul class="pros-cons__list pros-cons__list--pros">
+            <ul class="pros-cons__list pros-cons__list--pros" aria-label="Плюсы">
               <li>Крупный бонус с низким вейджером x3</li>
               <li>Быстрый вывод, в среднем за час</li>
               <li>Рубли, СБП и криптовалюта</li>
             </ul>
-            <ul class="pros-cons__list pros-cons__list--cons">
+            <ul class="pros-cons__list pros-cons__list--cons" aria-label="Минусы">
               <li>Бездепозитные бонусы только через Telegram</li>
               <li>Лимиты вывода зависят от VIP-уровня</li>
             </ul>
@@ -230,17 +335,20 @@
 
         <!-- Сайдбар -->
         <aside class="sidebar" aria-label="Бонус">
-          <div class="side-card">
-            <span class="logo__mark logo__mark--lg" aria-hidden="true">S</span>
-            <p class="side-card__title">Бонус до 300%</p>
-            <p class="side-card__text">на первый депозит по промокоду</p>
-            <code class="side-card__code">SELECTOR300</code>
+          <div class="promo-card promo-card--gold side-card">
+            <img class="promo-card__medal" src="img/medal-gold.webp" width="80" height="80" alt="" loading="lazy" decoding="async">
+            <div class="promo-card__tags"><span class="tag">Промокод</span></div>
+            <p class="promo-card__title">Бонус на первый депозит</p>
+            <div class="promo-card__prize">
+              <p class="promo-card__value">до 300%</p>
+              <code class="side-card__code">SELECTOR300</code>
+            </div>
             <a class="btn btn--primary btn--block" href="go/selector/" rel="nofollow sponsored noopener" target="_blank">Получить бонус</a>
           </div>
           <nav class="toc" aria-label="Содержание">
-            <p class="toc__title">Содержание</p>
+            <p class="overline">Содержание</p>
             <ol class="toc__list">
-              <li><a href="#bonus-terms">Условия бонуса</a></li>
+              <li><a href="#bonus-terms">Как получить бонус</a></li>
               <li><a href="#payments">Платёжные методы</a></li>
               <li><a href="#faq">Вопросы и ответы</a></li>
             </ol>
@@ -253,7 +361,9 @@
     <!-- ============ FAQ ============ -->
     <section class="section" id="faq" aria-labelledby="faq-title">
       <div class="container container--narrow">
-        <h2 class="section__title" id="faq-title">Вопросы и ответы</h2>
+        <div class="section-head">
+          <h2 class="section-head__title" id="faq-title">Вопросы и ответы</h2>
+        </div>
         <div class="faq">
           <details class="faq__item" name="faq" open>
             <summary class="faq__q">Куда вводить промокод?</summary>
@@ -281,24 +391,25 @@
   <footer class="footer">
     <div class="container">
       <div class="footer__top">
-        <a class="logo" href="#top" aria-label="selector — наверх">
+        <a class="logo" href="#top">
           <span class="logo__mark" aria-hidden="true">S</span>
           <span class="logo__text">selector</span>
         </a>
         <ul class="footer__nav">
           <li><a href="#bonuses">Бонусы</a></li>
           <li><a href="#games">Игры</a></li>
+          <li><a href="#vip">VIP</a></li>
           <li><a href="#review">Обзор</a></li>
           <li><a href="#faq">FAQ</a></li>
         </ul>
       </div>
 
       <ul class="footer__pay" aria-label="Платёжные методы">
-        <li class="chip">Visa</li>
-        <li class="chip">Mastercard</li>
-        <li class="chip">СБП</li>
-        <li class="chip">USDT</li>
-        <li class="chip">Bitcoin</li>
+        <li class="tag tag--muted">Visa</li>
+        <li class="tag tag--muted">Mastercard</li>
+        <li class="tag tag--muted">СБП</li>
+        <li class="tag tag--muted">USDT</li>
+        <li class="tag tag--muted">Bitcoin</li>
       </ul>
 
       <div class="footer__bottom">
@@ -312,9 +423,9 @@
     </div>
   </footer>
 
-  <!-- Липкая кнопка на мобильных -->
+  <!-- Липкая панель на мобильных -->
   <div class="sticky-cta" data-sticky-cta>
-    <div class="sticky-cta__text"><strong>300%</strong> на депозит</div>
+    <p class="sticky-cta__text"><span class="text-accent">300%</span> на первый депозит</p>
     <a class="btn btn--primary btn--sm" href="go/selector/" rel="nofollow sponsored noopener" target="_blank">Получить</a>
   </div>
 
