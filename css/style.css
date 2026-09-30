@@ -722,6 +722,18 @@ button { font: inherit; color: inherit; cursor: pointer; }
   color: var(--text-tertiary);
 }
 .table td { color: var(--text-primary); font-weight: 600; }
+.table__caption {
+  padding: 14px;
+  border-bottom: 1px solid var(--border-subtle);
+  background: var(--bg-elevated);
+  font-size: 10px;
+  font-weight: 800;
+  line-height: 12px;
+  letter-spacing: .08em;
+  text-align: left;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+}
 .table--kv tbody th { width: 40%; font-size: 14px; font-weight: 500; color: var(--text-tertiary); }
 .table tbody tr { transition: background-color .2s; }
 .table tbody tr:hover { background: rgb(255 255 255 / 0.02); }
@@ -994,6 +1006,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
   .verdict__value { font-size: 56px; }
   .table th,
   .table td { padding: 14px 16px; }
+  .table__caption { padding-inline: 16px; }
   .faq__a { font-size: 16px; line-height: 24px; }
   .steps { grid-template-columns: repeat(2, 1fr); }
   .shots { grid-template-columns: repeat(3, 1fr); }
