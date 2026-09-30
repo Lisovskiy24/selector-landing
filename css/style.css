@@ -224,14 +224,14 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .header__inner {
   display: flex;
   align-items: center;
-  gap: 18px;
+  gap: 8px;
   height: var(--header-h);
 }
-.header__actions { display: flex; align-items: center; gap: 10px; margin-left: auto; }
-.header__actions .btn { height: 40px; padding: 0 16px; }
+.header__actions { display: flex; align-items: center; gap: 8px; margin-left: auto; }
+.header__actions .btn { height: 40px; padding: 0 12px; }
 .header__login { display: none; }
 
-.logo { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; flex-shrink: 0; }
+.logo { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; flex-shrink: 0; }
 .logo__mark {
   display: grid;
   place-items: center;
@@ -888,6 +888,14 @@ button { font: inherit; color: inherit; cursor: pointer; }
 /* ==========================================================================
    Планшет
    ========================================================================== */
+/* Шапка: на экранах уже 360px отступы меньше, чтобы логотип и кнопки влезли в 320px */
+@media (min-width: 360px) {
+  .header__inner { gap: 18px; }
+  .header__actions { gap: 10px; }
+  .header__actions .btn { padding: 0 16px; }
+  .logo { gap: 10px; }
+}
+
 @media (min-width: 768px) {
   :root { --header-h: 72px; }
   .container { padding-inline: 24px; }
