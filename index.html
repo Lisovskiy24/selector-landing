@@ -12,6 +12,35 @@
   <link rel="preload" href="img/hero-casino.webp" as="image" media="(min-width: 768px)">
   <link rel="stylesheet" href="css/style.css">
   <script src="js/main.js" defer></script>
+  <!-- Разметка обзора для поисковиков (Schema.org Review); оценка совпадает с блоком «Оценка редакции» -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Review",
+    "name": "Обзор Selector Casino",
+    "itemReviewed": { "@type": "Organization", "name": "Selector", "url": "https://selector.gg" },
+    "reviewRating": { "@type": "Rating", "ratingValue": "4.4", "bestRating": "5", "worstRating": "1" },
+    "author": { "@type": "Organization", "name": "Редакция" },
+    "datePublished": "2026-09-30",
+    "dateModified": "2026-09-30"
+  }
+  </script>
+  <!-- Разметка вопросов-ответов для поисковиков (Schema.org FAQPage); тексты совпадают с блоком FAQ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "Куда вводить промокод?", "acceptedAnswer": { "@type": "Answer", "text": "Промокод вводится в кассе при первом пополнении — в поле «Промокод» под суммой депозита." } },
+      { "@type": "Question", "name": "Можно ли вывести бонус сразу?", "acceptedAnswer": { "@type": "Answer", "text": "Нет, сначала бонус нужно отыграть: сделать ставки на сумму в 3 раза больше депозита в слотах." } },
+      { "@type": "Question", "name": "Есть ли мобильное приложение?", "acceptedAnswer": { "@type": "Answer", "text": "Сайт полностью адаптирован под смартфоны, играть можно прямо в браузере без установки." } },
+      { "@type": "Question", "name": "Сколько идёт вывод?", "acceptedAnswer": { "@type": "Answer", "text": "В среднем заявка обрабатывается за час, максимальный срок — 24 часа." } },
+      { "@type": "Question", "name": "Есть ли у Selector лицензия?", "acceptedAnswer": { "@type": "Answer", "text": "Да. Сайт работает с 2019 года по лицензии игорного регулятора Anjouan № ALSI-202503005-FI1, оператор — Elsikora Group Limitada." } },
+      { "@type": "Question", "name": "В какой валюте можно играть?", "acceptedAnswer": { "@type": "Answer", "text": "В национальной валюте (рубли, тенге и другие) или в криптовалюте — Bitcoin, USDT и других." } },
+      { "@type": "Question", "name": "Как связаться с поддержкой?", "acceptedAnswer": { "@type": "Answer", "text": "Поддержка работает круглосуточно: онлайн-чат на сайте или e-mail support@selector.gg. Отвечают на русском языке." } }
+    ]
+  }
+  </script>
 </head>
 <body>
   <!-- Иконки из UI-кита (Figma), подключаются через <use> -->
@@ -103,10 +132,9 @@
         <div class="promos">
           <article class="promo-card promo-card--gold">
             <img class="promo-card__medal" src="img/medal-gold.webp" width="80" height="80" alt="" loading="lazy" decoding="async">
-            <div class="promo-card__tags"><span class="tag">Новичкам</span><span class="tag">1-й депозит</span></div>
+            <div class="promo-card__tags"><span class="tag">Новичкам</span><span class="tag">По промокоду</span></div>
             <h3 class="promo-card__title">Приветственный бонус</h3>
             <div class="promo-card__prize">
-              <span class="badge badge--info">по промокоду</span>
               <p class="promo-card__value">до 300%</p>
               <p class="promo-card__note">вейджер x3, от 500 ₽</p>
             </div>
@@ -115,10 +143,9 @@
 
           <article class="promo-card promo-card--blue">
             <img class="promo-card__medal" src="img/medal-silver.webp" width="80" height="80" alt="" loading="lazy" decoding="async">
-            <div class="promo-card__tags"><span class="tag">Каждый день</span><span class="tag">Telegram</span></div>
+            <div class="promo-card__tags"><span class="tag">Без депозита</span><span class="tag">Telegram</span></div>
             <h3 class="promo-card__title">Бездепозитные бонусы</h3>
             <div class="promo-card__prize">
-              <span class="badge badge--success">без депозита</span>
               <p class="promo-card__value">фриспины</p>
               <p class="promo-card__note">промокоды в официальном канале</p>
             </div>
@@ -130,7 +157,6 @@
             <div class="promo-card__tags"><span class="tag">Еженедельно</span><span class="tag">VIP</span></div>
             <h3 class="promo-card__title">Кэшбэк за неделю</h3>
             <div class="promo-card__prize">
-              <span class="badge badge--warning">до пятницы</span>
               <p class="promo-card__value">до 15%</p>
               <p class="promo-card__note">зависит от VIP-уровня</p>
             </div>
@@ -144,50 +170,44 @@
     <section class="section" id="games" aria-labelledby="games-title">
       <div class="container">
         <div class="section-head">
-          <h2 class="section-head__title" id="games-title">Популярные игры</h2>
+          <h2 class="section-head__title" id="games-title">Игры и ставки</h2>
           <a class="section-head__link" href="go/selector/" rel="nofollow sponsored noopener" target="_blank">
             Все игры <svg class="icon" width="16" height="16" aria-hidden="true"><use href="#i-arrow-right"/></svg>
           </a>
         </div>
 
+        <!-- Категории, а не конкретные игры: обложки реальных слотов принадлежат провайдерам -->
         <ul class="games">
           <li class="game">
             <img class="game__art" src="img/game-mallard.webp" width="480" height="643" alt="" loading="lazy" decoding="async">
-            <span class="game__rating"><svg class="icon" width="12" height="12" aria-hidden="true"><use href="#i-star"/></svg>4.8</span>
-            <h3 class="game__title">Mallard Rush</h3>
-            <p class="game__provider">Ironbell</p>
+            <h3 class="game__title">Слоты</h3>
+            <p class="game__provider">Pragmatic Play, NetEnt, Playtech</p>
             <div class="game__hover">
-              <a class="btn btn--primary btn--sm" href="go/selector/" rel="nofollow sponsored noopener" target="_blank" aria-label="Играть в Mallard Rush">Играть</a>
-              <a class="btn btn--secondary btn--sm" href="go/selector/" rel="nofollow sponsored noopener" target="_blank" aria-label="Демо Mallard Rush">Демо</a>
+              <a class="btn btn--primary btn--sm" href="go/selector/" rel="nofollow sponsored noopener" target="_blank" aria-label="Перейти в раздел «Слоты»">Перейти</a>
             </div>
           </li>
           <li class="game">
             <img class="game__art" src="img/game-tide.webp" width="480" height="643" alt="" loading="lazy" decoding="async">
-            <span class="game__tag"><svg class="icon" width="12" height="12" aria-hidden="true"><use href="#i-shield"/></svg>Эксклюзив</span>
-            <span class="game__rating"><svg class="icon" width="12" height="12" aria-hidden="true"><use href="#i-star"/></svg>4.9</span>
-            <h3 class="game__title">Tide King</h3>
-            <p class="game__provider">Spinhouse</p>
+            <h3 class="game__title">Live-казино</h3>
+            <p class="game__provider">Рулетка, блэкджек, баккара</p>
             <div class="game__hover">
-              <a class="btn btn--primary btn--sm" href="go/selector/" rel="nofollow sponsored noopener" target="_blank" aria-label="Играть в Tide King">Играть</a>
-              <a class="btn btn--secondary btn--sm" href="go/selector/" rel="nofollow sponsored noopener" target="_blank" aria-label="Демо Tide King">Демо</a>
+              <a class="btn btn--primary btn--sm" href="go/selector/" rel="nofollow sponsored noopener" target="_blank" aria-label="Перейти в раздел «Live-казино»">Перейти</a>
             </div>
           </li>
           <li class="game">
             <img class="game__art" src="img/game-dawn.webp" width="480" height="643" alt="" loading="lazy" decoding="async">
-            <span class="game__rating"><svg class="icon" width="12" height="12" aria-hidden="true"><use href="#i-star"/></svg>4.5</span>
-            <h3 class="game__title">Dawn Raider</h3>
-            <p class="game__provider">Mammoth</p>
+            <h3 class="game__title">Быстрые игры</h3>
+            <p class="game__provider">Crash и мгновенные раунды</p>
             <div class="game__hover">
-              <a class="btn btn--primary btn--sm" href="go/selector/" rel="nofollow sponsored noopener" target="_blank" aria-label="Играть в Dawn Raider">Играть</a>
-              <a class="btn btn--secondary btn--sm" href="go/selector/" rel="nofollow sponsored noopener" target="_blank" aria-label="Демо Dawn Raider">Демо</a>
+              <a class="btn btn--primary btn--sm" href="go/selector/" rel="nofollow sponsored noopener" target="_blank" aria-label="Перейти в раздел «Быстрые игры»">Перейти</a>
             </div>
           </li>
           <li class="game game--more">
             <a class="game__more" href="go/selector/" rel="nofollow sponsored noopener" target="_blank">
-              <span class="game__more-icon"><svg class="icon" width="26" height="26" aria-hidden="true"><use href="#i-dice"/></svg></span>
-              <span class="game__more-value">3000+</span>
-              <span class="game__more-text">слотов, live-казино и&nbsp;crash-игр</span>
-              <span class="btn btn--secondary btn--sm">Смотреть все</span>
+              <span class="game__more-icon"><svg class="icon" width="26" height="26" aria-hidden="true"><use href="#i-zap"/></svg></span>
+              <span class="game__more-value">Спорт</span>
+              <span class="game__more-text">футбол, баскетбол, Dota&nbsp;2 и&nbsp;CS: ставки до&nbsp;матча и&nbsp;по&nbsp;ходу игры</span>
+              <span class="btn btn--secondary btn--sm">Смотреть</span>
             </a>
           </li>
         </ul>
@@ -223,13 +243,43 @@
 
         <article class="article" id="review" aria-labelledby="review-title">
           <h2 class="article__title" id="review-title">Обзор Selector Casino</h2>
+          <p class="article__meta">Редакция · обновлено <time datetime="2026-09-30">30 сентября 2026</time></p>
           <p>
             Selector — онлайн-казино и букмекер, который работает с 2019 года по лицензии Anjouan.
             В каталоге — слоты, live-казино, ставки на спорт и киберспорт от 60 провайдеров,
             включая Pragmatic Play, NetEnt, Playtech и Evolution. Сайт работает на русском языке,
             принимает национальные валюты и криптовалюту, а новые игроки получают бонус до 300% на первый депозит.
           </p>
-          <p>Ниже — главное: условия бонуса, платёжные методы, лимиты на вывод и как выглядит сайт изнутри.</p>
+
+          <!-- Оценка редакции: итог = среднее по пяти критериям -->
+          <section class="verdict" aria-labelledby="verdict-title">
+            <div class="verdict__score">
+              <h3 class="overline" id="verdict-title">Оценка редакции</h3>
+              <p class="verdict__total"><span class="verdict__value">4.4</span> <span class="verdict__max">из 5</span></p>
+            </div>
+            <dl class="verdict__list">
+              <div class="verdict__row">
+                <dt>Бонусы</dt>
+                <dd><meter class="verdict__bar" min="0" max="5" value="4.5" aria-hidden="true"></meter><span class="verdict__num">4.5</span></dd>
+              </div>
+              <div class="verdict__row">
+                <dt>Игры</dt>
+                <dd><meter class="verdict__bar" min="0" max="5" value="4.8" aria-hidden="true"></meter><span class="verdict__num">4.8</span></dd>
+              </div>
+              <div class="verdict__row">
+                <dt>Платежи</dt>
+                <dd><meter class="verdict__bar" min="0" max="5" value="4.3" aria-hidden="true"></meter><span class="verdict__num">4.3</span></dd>
+              </div>
+              <div class="verdict__row">
+                <dt>Поддержка</dt>
+                <dd><meter class="verdict__bar" min="0" max="5" value="4.5" aria-hidden="true"></meter><span class="verdict__num">4.5</span></dd>
+              </div>
+              <div class="verdict__row">
+                <dt>Надёжность</dt>
+                <dd><meter class="verdict__bar" min="0" max="5" value="3.9" aria-hidden="true"></meter><span class="verdict__num">3.9</span></dd>
+              </div>
+            </dl>
+          </section>
 
           <h3 class="article__h3" id="bonus-terms">Как получить бонус</h3>
           <ol class="steps">
@@ -263,26 +313,41 @@
             </li>
           </ol>
 
-          <h3 class="article__h3">Основная информация</h3>
-          <section class="table-wrap" tabindex="0" aria-label="Информация о казино">
-            <table class="table table--kv">
-              <caption class="visually-hidden">Основные характеристики Selector Casino</caption>
-              <tbody>
-                <tr><th scope="row">Приветственный бонус</th><td>до 300% на первый депозит</td></tr>
-                <tr><th scope="row">Вейджер</th><td>x3 от суммы депозита</td></tr>
-                <tr><th scope="row">Минимальный депозит</th><td>500 ₽</td></tr>
-                <tr><th scope="row">Промокод</th><td><span class="text-accent">SELECTOR300</span></td></tr>
-                <tr><th scope="row">Работает с</th><td>2019 года</td></tr>
-                <tr><th scope="row">Лицензия</th><td>Anjouan, ALSI-202503005-FI1</td></tr>
-                <tr><th scope="row">Валюты</th><td>RUB, KZT и другие национальные; BTC, USDT и другие криптовалюты</td></tr>
-                <tr><th scope="row">Вывод средств</th><td>в среднем 1 час, до 24 часов</td></tr>
-                <tr><th scope="row">Игры</th><td>слоты, live-казино, crash-игры, ставки на спорт и киберспорт</td></tr>
-                <tr><th scope="row">Провайдеры</th><td>60, в том числе Pragmatic Play, NetEnt, Playtech, Evolution</td></tr>
-                <tr><th scope="row">Мобильная версия</th><td>есть, адаптивный сайт</td></tr>
-                <tr><th scope="row">Поддержка</th><td>24/7 на родном языке, онлайн-чат и e-mail</td></tr>
-              </tbody>
-            </table>
-          </section>
+          <h3 class="article__h3" id="info">Основная информация</h3>
+          <div class="tables">
+            <section class="table-wrap" tabindex="0" aria-label="Приветственный бонус">
+              <table class="table table--kv">
+                <caption class="visually-hidden">Условия приветственного бонуса</caption>
+                <thead>
+                  <tr><th scope="colgroup" colspan="2">Бонус</th></tr>
+                </thead>
+                <tbody>
+                  <tr><th scope="row">Размер</th><td>до 300% на первый депозит</td></tr>
+                  <tr><th scope="row">Вейджер</th><td>x3 от суммы депозита</td></tr>
+                  <tr><th scope="row">Мин. депозит</th><td>500 ₽</td></tr>
+                  <tr><th scope="row">Промокод</th><td><span class="text-accent">SELECTOR300</span></td></tr>
+                </tbody>
+              </table>
+            </section>
+            <section class="table-wrap" tabindex="0" aria-label="О казино">
+              <table class="table table--kv">
+                <caption class="visually-hidden">Основные характеристики Selector Casino</caption>
+                <thead>
+                  <tr><th scope="colgroup" colspan="2">О казино</th></tr>
+                </thead>
+                <tbody>
+                  <tr><th scope="row">Работает с</th><td>2019 года</td></tr>
+                  <tr><th scope="row">Лицензия</th><td>Anjouan, ALSI-202503005-FI1</td></tr>
+                  <tr><th scope="row">Валюты</th><td>RUB, KZT и другие национальные; BTC, USDT и другие криптовалюты</td></tr>
+                  <tr><th scope="row">Вывод</th><td>в среднем 1 час, до 24 часов</td></tr>
+                  <tr><th scope="row">Игры</th><td>слоты, live-казино, crash-игры, ставки на спорт и киберспорт</td></tr>
+                  <tr><th scope="row">Провайдеры</th><td>60, в том числе Pragmatic Play, NetEnt, Playtech, Evolution</td></tr>
+                  <tr><th scope="row">Смартфоны</th><td>адаптивный сайт, без приложения</td></tr>
+                  <tr><th scope="row">Поддержка</th><td>24/7 на родном языке, онлайн-чат и e-mail</td></tr>
+                </tbody>
+              </table>
+            </section>
+          </div>
 
           <h3 class="article__h3" id="payments">Платёжные методы</h3>
           <section class="table-wrap" tabindex="0" aria-label="Платёжные методы">
@@ -300,7 +365,7 @@
             </table>
           </section>
 
-          <h3 class="article__h3">Как выглядит сайт</h3>
+          <h3 class="article__h3" id="screens">Как выглядит сайт</h3>
           <p>Интерфейс тёмный, с синими акцентами: слева — меню разделов, в лобби — акции, новинки и подборки по провайдерам.</p>
           <ul class="shots">
             <li class="shots__item">
@@ -323,7 +388,7 @@
             </li>
           </ul>
 
-          <h3 class="article__h3">Плюсы и минусы</h3>
+          <h3 class="article__h3" id="pros-cons">Плюсы и минусы</h3>
           <div class="pros-cons">
             <ul class="pros-cons__list pros-cons__list--pros" aria-label="Плюсы">
               <li>Крупный бонус с низким вейджером x3</li>
@@ -355,7 +420,10 @@
             <p class="overline">Содержание</p>
             <ol class="toc__list">
               <li><a href="#bonus-terms">Как получить бонус</a></li>
+              <li><a href="#info">Основная информация</a></li>
               <li><a href="#payments">Платёжные методы</a></li>
+              <li><a href="#screens">Как выглядит сайт</a></li>
+              <li><a href="#pros-cons">Плюсы и минусы</a></li>
               <li><a href="#faq">Вопросы и ответы</a></li>
             </ol>
           </nav>
@@ -366,39 +434,41 @@
 
     <!-- ============ FAQ ============ -->
     <section class="section" id="faq" aria-labelledby="faq-title">
-      <div class="container container--narrow">
-        <div class="section-head">
-          <h2 class="section-head__title" id="faq-title">Вопросы и ответы</h2>
-        </div>
-        <div class="faq">
-          <details class="faq__item" name="faq" open>
-            <summary class="faq__q">Куда вводить промокод?</summary>
-            <p class="faq__a">Промокод вводится в кассе при первом пополнении — в поле «Промокод» под суммой депозита.</p>
-          </details>
-          <details class="faq__item" name="faq">
-            <summary class="faq__q">Можно ли вывести бонус сразу?</summary>
-            <p class="faq__a">Нет, сначала бонус нужно отыграть: сделать ставки на сумму в 3 раза больше депозита в слотах.</p>
-          </details>
-          <details class="faq__item" name="faq">
-            <summary class="faq__q">Есть ли мобильное приложение?</summary>
-            <p class="faq__a">Сайт полностью адаптирован под смартфоны, играть можно прямо в браузере без установки.</p>
-          </details>
-          <details class="faq__item" name="faq">
-            <summary class="faq__q">Сколько идёт вывод?</summary>
-            <p class="faq__a">В среднем заявка обрабатывается за час, максимальный срок — 24 часа.</p>
-          </details>
-          <details class="faq__item" name="faq">
-            <summary class="faq__q">Есть ли у Selector лицензия?</summary>
-            <p class="faq__a">Да. Сайт работает с 2019 года по лицензии игорного регулятора Anjouan № ALSI-202503005-FI1, оператор — Elsikora Group Limitada.</p>
-          </details>
-          <details class="faq__item" name="faq">
-            <summary class="faq__q">В какой валюте можно играть?</summary>
-            <p class="faq__a">В национальной валюте (рубли, тенге и другие) или в криптовалюте — Bitcoin, USDT и других.</p>
-          </details>
-          <details class="faq__item" name="faq">
-            <summary class="faq__q">Как связаться с поддержкой?</summary>
-            <p class="faq__a">Поддержка работает круглосуточно: онлайн-чат на сайте или e-mail support@selector.gg. Отвечают на русском языке.</p>
-          </details>
+      <div class="container">
+        <div class="faq-block">
+          <div class="section-head">
+            <h2 class="section-head__title" id="faq-title">Вопросы и ответы</h2>
+          </div>
+          <div class="faq">
+            <details class="faq__item" name="faq" open>
+              <summary class="faq__q">Куда вводить промокод?</summary>
+              <p class="faq__a">Промокод вводится в кассе при первом пополнении — в поле «Промокод» под суммой депозита.</p>
+            </details>
+            <details class="faq__item" name="faq">
+              <summary class="faq__q">Можно ли вывести бонус сразу?</summary>
+              <p class="faq__a">Нет, сначала бонус нужно отыграть: сделать ставки на сумму в 3 раза больше депозита в слотах.</p>
+            </details>
+            <details class="faq__item" name="faq">
+              <summary class="faq__q">Есть ли мобильное приложение?</summary>
+              <p class="faq__a">Сайт полностью адаптирован под смартфоны, играть можно прямо в браузере без установки.</p>
+            </details>
+            <details class="faq__item" name="faq">
+              <summary class="faq__q">Сколько идёт вывод?</summary>
+              <p class="faq__a">В среднем заявка обрабатывается за час, максимальный срок — 24 часа.</p>
+            </details>
+            <details class="faq__item" name="faq">
+              <summary class="faq__q">Есть ли у Selector лицензия?</summary>
+              <p class="faq__a">Да. Сайт работает с 2019 года по лицензии игорного регулятора Anjouan № ALSI-202503005-FI1, оператор — Elsikora Group Limitada.</p>
+            </details>
+            <details class="faq__item" name="faq">
+              <summary class="faq__q">В какой валюте можно играть?</summary>
+              <p class="faq__a">В национальной валюте (рубли, тенге и другие) или в криптовалюте — Bitcoin, USDT и других.</p>
+            </details>
+            <details class="faq__item" name="faq">
+              <summary class="faq__q">Как связаться с поддержкой?</summary>
+              <p class="faq__a">Поддержка работает круглосуточно: онлайн-чат на сайте или e-mail support@selector.gg. Отвечают на русском языке.</p>
+            </details>
+          </div>
         </div>
       </div>
     </section>

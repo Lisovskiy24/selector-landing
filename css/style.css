@@ -93,7 +93,7 @@ body {
 
 img, svg { display: block; max-width: 100%; height: auto; }
 h1, h2, h3, p, ul, ol { margin: 0; }
-ul[class], ol[class] { padding: 0; list-style: none; }
+:where(ul[class], ol[class]) { padding: 0; list-style: none; } /* :where — чтобы не перебивать padding компонентов */
 a { color: inherit; }
 button { font: inherit; color: inherit; cursor: pointer; }
 :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
@@ -339,6 +339,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
   background: linear-gradient(transparent, var(--banner-fade, #1e3781));
 }
 .banner--vip .banner__art::after { --banner-fade: #125032; }
+.banner--vip .banner__art img { height: 190px; }
 
 .banner__content {
   position: relative;
@@ -408,10 +409,10 @@ button { font: inherit; color: inherit; cursor: pointer; }
   margin-bottom: 18px;
 }
 .section-head__title {
-  font-size: clamp(22px, 5vw, 28px);
+  font-size: clamp(24px, 5vw, 32px);
   font-weight: 800;
   line-height: 1.2;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.025em;
 }
 .section-head__link {
   display: inline-flex;
@@ -427,7 +428,19 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .section-head__link:hover { color: var(--accent); }
 
 /* ---------- Promo Card ---------- */
-.promos { display: grid; gap: 14px; }
+.promos {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 85%;
+  gap: 12px;
+  margin-inline: -16px;
+  padding: 0 16px 4px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: 16px; /* иначе snap прижимает первую карточку к краю экрана */
+  scrollbar-width: none;
+}
+.promos::-webkit-scrollbar { display: none; }
 
 .promo-card {
   position: relative;
@@ -440,6 +453,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
   overflow: hidden;
   border-radius: 14px;
   isolation: isolate;
+  scroll-snap-align: start;
 }
 .promo-card::before,
 .promo-card::after { content: ""; position: absolute; inset: 0; z-index: -1; }
@@ -460,11 +474,11 @@ button { font: inherit; color: inherit; cursor: pointer; }
   box-shadow: 0 8px 24px rgb(0 0 0 / 0.35);
 }
 .promo-card__tags { display: flex; flex-wrap: wrap; gap: 8px; padding-right: 72px; }
-.promo-card__title { font-size: 18px; font-weight: 700; line-height: 24px; letter-spacing: -0.01em; max-width: 190px; }
+.promo-card__title { padding-right: 72px; font-size: 18px; font-weight: 700; line-height: 24px; letter-spacing: -0.01em; }
 .promo-card__prize { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; margin-top: auto; }
 .promo-card__value { font-family: var(--font-display); font-size: 32px; font-weight: 800; line-height: 38px; letter-spacing: -0.025em; }
 .promo-card--blue .promo-card__value { font-family: var(--font); }
-.promo-card__note { font-size: 13px; line-height: 18px; color: rgb(255 255 255 / 0.72); }
+.promo-card__note { font-size: 14px; line-height: 20px; color: rgb(255 255 255 / 0.72); }
 
 /* ---------- Game Card ---------- */
 .games {
@@ -476,6 +490,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
   padding: 4px 16px 8px;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
+  scroll-padding-inline: 16px;
   scrollbar-width: none;
 }
 .games::-webkit-scrollbar { display: none; }
@@ -610,17 +625,46 @@ button { font: inherit; color: inherit; cursor: pointer; }
   flex-direction: column;
   gap: 16px;
   min-width: 0;
-  padding: 22px 16px;
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--r-banner);
-  background: var(--bg-surface);
   color: var(--text-secondary);
   font-size: 16px;
   line-height: 24px;
 }
 .article__title { font-size: clamp(24px, 5vw, 32px); font-weight: 800; line-height: 1.2; letter-spacing: -0.025em; color: var(--text-primary); }
+.article > p { max-width: 42rem; }
 .article__h3 { margin-top: 12px; font-size: 20px; font-weight: 700; line-height: 26px; letter-spacing: -0.01em; color: var(--text-primary); }
 .article strong { color: var(--accent); font-weight: 700; }
+.article__meta { margin-top: -8px; font-size: 14px; line-height: 20px; color: var(--text-tertiary); }
+
+/* Оценка редакции */
+.verdict {
+  display: grid;
+  gap: 16px;
+  padding: 16px;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--r-card);
+  background: var(--bg-elevated);
+}
+.verdict__score { display: flex; flex-direction: column; gap: 6px; }
+.verdict__total { display: flex; align-items: baseline; gap: 6px; }
+.verdict__value { font-family: var(--font-display); font-size: 44px; font-weight: 800; line-height: 1; letter-spacing: -0.03em; color: var(--accent); }
+.verdict__max { font-size: 14px; color: var(--text-tertiary); }
+.verdict__list { display: flex; flex-direction: column; gap: 10px; margin: 0; }
+.verdict__row { display: grid; grid-template-columns: 96px 1fr; align-items: center; gap: 12px; }
+.verdict__row dt { font-size: 14px; font-weight: 600; line-height: 20px; color: var(--text-primary); }
+.verdict__row dd { display: flex; align-items: center; gap: 10px; margin: 0; }
+.verdict__num { width: 28px; font-family: var(--font-display); font-size: 14px; font-weight: 800; text-align: right; color: var(--text-primary); }
+/* <meter> без системного оформления: полоска-трек и заливка акцентом */
+.verdict__bar {
+  flex: 1;
+  height: 6px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--bg-inset);
+  appearance: none;
+}
+.verdict__bar::-webkit-meter-bar { height: 6px; border: 0; border-radius: 999px; background: var(--bg-inset); }
+.verdict__bar::-webkit-meter-optimum-value { border-radius: 999px; background: var(--accent); }
+.verdict__bar::-moz-meter-bar { border-radius: 999px; background: var(--accent); }
 
 /* Step Card */
 .steps { display: grid; gap: 10px; }
@@ -648,19 +692,20 @@ button { font: inherit; color: inherit; cursor: pointer; }
 .step__body { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
 .step__head { display: flex; align-items: center; gap: 8px; }
 .step__title { font-size: 18px; font-weight: 700; line-height: 24px; letter-spacing: -0.01em; color: var(--text-primary); }
-.step__text { font-size: 13px; line-height: 18px; }
+.step__text { font-size: 14px; line-height: 20px; }
 
 /* Таблицы (Table Header + Table Row из кита) */
+.tables { display: grid; gap: 12px; }
 .table-wrap {
   overflow-x: auto;
   border: 1px solid var(--border-subtle);
   border-radius: 12px;
   -webkit-overflow-scrolling: touch;
 }
-.table { width: 100%; border-collapse: collapse; font-size: 14px; line-height: 18px; }
+.table { width: 100%; border-collapse: collapse; font-size: 14px; line-height: 20px; }
 .table th,
 .table td {
-  padding: 14px 16px;
+  padding: 12px 14px;
   text-align: left;
   vertical-align: middle;
   border-bottom: 1px solid var(--border-subtle);
@@ -677,7 +722,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
   color: var(--text-tertiary);
 }
 .table td { color: var(--text-primary); font-weight: 600; }
-.table--kv tbody th { width: 44%; font-size: 13px; font-weight: 500; color: var(--text-tertiary); }
+.table--kv tbody th { width: 40%; font-size: 14px; font-weight: 500; color: var(--text-tertiary); }
 .table tbody tr { transition: background-color .2s; }
 .table tbody tr:hover { background: rgb(255 255 255 / 0.02); }
 
@@ -708,11 +753,11 @@ button { font: inherit; color: inherit; cursor: pointer; }
   border: 1px solid var(--border-subtle);
   border-radius: var(--r-card);
   background: var(--bg-elevated);
-  font-size: 14px;
-  line-height: 20px;
+  font-size: 15px;
+  line-height: 22px;
   color: var(--text-primary);
 }
-.pros-cons__list li { position: relative; padding-left: 30px; }
+.pros-cons__list li { position: relative; padding-left: 32px; }
 .pros-cons__list li::before {
   position: absolute;
   left: 0;
@@ -798,10 +843,10 @@ button { font: inherit; color: inherit; cursor: pointer; }
   background: var(--bg-inset);
   font-size: 18px;
   font-weight: 600;
-  transition: transform .2s, background-color .2s, color .2s;
+  transition: background-color .2s, color .2s;
 }
-.faq__item[open] .faq__q::after { transform: rotate(45deg); background: var(--accent); color: var(--text-inverse); }
-.faq__a { padding: 0 18px 18px; font-size: 14px; line-height: 20px; color: var(--text-secondary); }
+.faq__item[open] .faq__q::after { content: "−"; background: var(--accent); color: var(--text-inverse); }
+.faq__a { max-width: 42rem; padding: 0 18px 18px; font-size: 15px; line-height: 22px; color: var(--text-secondary); }
 
 /* ---------- Подвал ---------- */
 .footer {
@@ -905,7 +950,8 @@ button { font: inherit; color: inherit; cursor: pointer; }
   .offer { padding-top: 24px; }
 
   /* Баннер на планшете: арт сверху шире, контент под ним */
-  .banner__art img { height: 300px; object-position: 85% 30%; }
+  .banner__art img,
+  .banner--vip .banner__art img { height: 300px; object-position: 85% 30%; }
   .banner__art::after { height: 140px; }
   .banner__content { padding: 8px 32px 36px; }
   .banner__cta { flex-direction: row; align-items: center; gap: 16px; }
@@ -918,7 +964,14 @@ button { font: inherit; color: inherit; cursor: pointer; }
   .game__title { font-size: 23px; }
 
   .section { padding-top: 56px; }
-  .promos { grid-template-columns: repeat(2, 1fr); }
+  .promos {
+    grid-auto-flow: row;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    margin-inline: 0;
+    padding: 0;
+    overflow: visible;
+  }
   .promos .promo-card:last-child { grid-column: 1 / -1; }
 
   .games {
@@ -929,7 +982,19 @@ button { font: inherit; color: inherit; cursor: pointer; }
     overflow: visible;
   }
 
-  .article { padding: 36px; }
+  .article {
+    padding: 36px;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--r-banner);
+    background: var(--bg-surface);
+  }
+  .article__h3 { font-size: 22px; line-height: 28px; }
+  .verdict { grid-template-columns: 160px 1fr; align-items: center; gap: 24px; padding: 20px 24px; }
+  .verdict__score { padding-right: 24px; border-right: 1px solid var(--border-subtle); }
+  .verdict__value { font-size: 56px; }
+  .table th,
+  .table td { padding: 14px 16px; }
+  .faq__a { font-size: 16px; line-height: 24px; }
   .steps { grid-template-columns: repeat(2, 1fr); }
   .shots { grid-template-columns: repeat(3, 1fr); }
   .pros-cons { grid-template-columns: 1fr 1fr; }
@@ -962,7 +1027,8 @@ button { font: inherit; color: inherit; cursor: pointer; }
   .banner { min-height: 480px; justify-content: center; }
   .banner--vip { min-height: 380px; }
   .banner__art { position: absolute; inset: 0; z-index: -1; }
-  .banner__art img { height: 100%; object-position: 72% center; }
+  .banner__art img,
+  .banner--vip .banner__art img { height: 100%; object-position: 72% center; }
   .banner__art::after { display: none; }
   .banner__art::before {
     content: "";
@@ -982,6 +1048,7 @@ button { font: inherit; color: inherit; cursor: pointer; }
   .layout { grid-template-columns: minmax(0, 1fr) 300px; align-items: start; gap: 24px; }
   .sidebar { position: sticky; top: calc(var(--header-h) + 24px); }
   .toc { display: block; }
+  .faq-block { max-width: calc(100% - 324px); }
 }
 
 /* Настройка «уменьшить движение» */
